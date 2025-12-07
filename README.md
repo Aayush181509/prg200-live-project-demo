@@ -42,6 +42,7 @@ live-project/
 ### Prerequisites
 - Python 3.8 or higher
 - pip package manager
+- Docker and Docker Compose (for containerized deployment)
 
 ### Backend Setup
 
@@ -84,6 +85,37 @@ streamlit run app.py
 ```
 
 The frontend will be available at `http://localhost:8501`
+
+### Docker Setup (Recommended)
+
+1. Make sure Docker and Docker Compose are installed on your system
+
+2. From the project root directory, run:
+```bash
+docker-compose up --build
+```
+
+This will:
+- Build both backend and frontend images
+- Start both services in containers
+- Backend will be available at `http://localhost:8000`
+- Frontend will be available at `http://localhost:8501`
+- API documentation at `http://localhost:8000/docs`
+
+3. To stop the containers:
+```bash
+docker-compose down
+```
+
+4. To run in detached mode (background):
+```bash
+docker-compose up -d
+```
+
+5. To view logs:
+```bash
+docker-compose logs -f
+```
 
 ## Usage
 
